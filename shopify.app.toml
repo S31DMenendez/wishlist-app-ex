@@ -1,0 +1,45 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "1fa0bffb98cb4f413f5f092a0f2f6c5c"
+application_url = "https://hit-sydney-kinase-grow.trycloudflare.com"
+embedded = true
+name = "test-dm-app"
+handle = "test-dm-app"
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "pubsub://meta-sanctum-447415-t5:creditori-topic"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "pubsub://meta-sanctum-447415-t5:creditori-topic"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://hit-sydney-kinase-grow.trycloudflare.com/auth/callback",
+  "https://hit-sydney-kinase-grow.trycloudflare.com/auth/shopify/callback",
+  "https://hit-sydney-kinase-grow.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "testdm-app-dev.myshopify.com"
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true
