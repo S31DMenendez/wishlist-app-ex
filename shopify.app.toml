@@ -1,7 +1,11 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "1fa0bffb98cb4f413f5f092a0f2f6c5c"
+<<<<<<< HEAD
 application_url = "https://hit-sydney-kinase-grow.trycloudflare.com"
+=======
+application_url = "https://gang-symantec-exceed-photographs.trycloudflare.com"
+>>>>>>> b692de7 (pubsub and scopes update)
 embedded = true
 name = "test-dm-app"
 handle = "test-dm-app"
@@ -11,7 +15,7 @@ api_version = "2025-01"
 
   [[webhooks.subscriptions]]
   topics = [ "app/uninstalled" ]
-  uri = "pubsub://meta-sanctum-447415-t5:creditori-topic"
+  uri = "pubsub://{projectid}:{topic_id}"
 
   [[webhooks.subscriptions]]
   topics = [ "app/uninstalled" ]
@@ -19,21 +23,21 @@ api_version = "2025-01"
 
   [[webhooks.subscriptions]]
   topics = [ "app/scopes_update" ]
-  uri = "pubsub://meta-sanctum-447415-t5:creditori-topic"
+  uri = "pubsub://{projectid}:{topic_id}"
 
   [[webhooks.subscriptions]]
-  topics = [ "app/scopes_update" ]
-  uri = "/webhooks/app/scopes_update"
+  topics = [ "products/create", "products/update", "products/delete" ]
+  uri = "pubsub://{projectid}:{topic_id}"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products,read_products,read_orders,write_orders"
 
 [auth]
 redirect_urls = [
-  "https://hit-sydney-kinase-grow.trycloudflare.com/auth/callback",
-  "https://hit-sydney-kinase-grow.trycloudflare.com/auth/shopify/callback",
-  "https://hit-sydney-kinase-grow.trycloudflare.com/api/auth/callback"
+  "https://gang-symantec-exceed-photographs.trycloudflare.com/auth/callback",
+  "https://gang-symantec-exceed-photographs.trycloudflare.com/auth/shopify/callback",
+  "https://gang-symantec-exceed-photographs.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

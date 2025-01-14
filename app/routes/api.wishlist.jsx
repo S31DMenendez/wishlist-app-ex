@@ -46,7 +46,11 @@ export async function action({request}){
             },
           });
     
+<<<<<<< HEAD
           const response = json({ message: "Product added to wishlist", method: "POST", wishlisted: true });
+=======
+           response = json({ message: "Product added to wishlist", method: "POST", wishlisted: true });
+>>>>>>> b692de7 (pubsub and scopes update)
           return  response;
        case "PATCH":
            return json({message:"Success", method:"POST"});
@@ -60,7 +64,11 @@ export async function action({request}){
               productId:productId,
             }
           })
+<<<<<<< HEAD
           response=json({message:"Product removed from you wishlist", method:_action, wishlisted:false});
+=======
+          let response2=json({message:"Product removed from you wishlist", method:_action, wishlisted:false});
+>>>>>>> b692de7 (pubsub and scopes update)
           return new Response("Method not Allowed",{status:405});
        }
 }

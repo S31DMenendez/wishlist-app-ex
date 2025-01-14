@@ -22,7 +22,11 @@ import { formatDistanceToNow, parseISO } from 'date-fns';
 export const loader = async ({ request }) => {
   const auth = await authenticate.admin(request);
   const shop = auth.session.shop;
+<<<<<<< HEAD
   console.log('shop: -------> ', shop);
+=======
+  //console.log('shop: -------> ', shop);
+>>>>>>> b692de7 (pubsub and scopes update)
   // get data from database for that shop acending by id
   const wishlistData = await db.wishlist.findMany({
     where: {
@@ -33,7 +37,11 @@ export const loader = async ({ request }) => {
     },
   });
 
+<<<<<<< HEAD
   console.log('wishlistData: -------> ', wishlistData);
+=======
+  //console.log('wishlistData: -------> ', wishlistData);
+>>>>>>> b692de7 (pubsub and scopes update)
 
   return json(wishlistData);
 };

@@ -39,6 +39,10 @@ const shopify = shopifyApp({
   ...(process.env.SHOP_CUSTOM_DOMAIN
     ? { customShopDomains: [process.env.SHOP_CUSTOM_DOMAIN] }
     : {}),
+<<<<<<< HEAD
+=======
+    
+>>>>>>> b692de7 (pubsub and scopes update)
 });
 
 export default shopify;
